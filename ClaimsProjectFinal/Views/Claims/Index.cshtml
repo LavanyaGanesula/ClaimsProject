@@ -1,0 +1,139 @@
+﻿@using ClaimsProjectFinal.Models
+@{
+    ViewBag.Title = "Claims Page";
+}
+
+@*<div class="jumbotron">
+    <h2>Claims</h2>
+    <p class="lead">Showing the Claims final version</p>    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Claims Details</h2>
+        <h3>Origin Year</h3>
+        <h3>1990</h3>
+        <h3>Number Of development Years</h3>
+        <h3>4</h3>
+    </div>
+</div>*@
+<p>&nbsp;</p>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-12">
+                        Claims
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Origin Year</th>                                                                        
+                                    <th>Number Of development Years</th>
+                                </tr>
+                            </thead>                            
+                            <tbody>
+                                <tr>
+                                    <td>@Model.OriginYear</td>
+                                    <td>@Model.NoOfYears </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-12">
+                        OutPut Claims 
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ClaimsString</th>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.FinalClaimsList.Count > 0)
+                                {
+                                    foreach (var claim in Model.FinalClaimsList)
+                                    {
+                                        <tr>
+                                            <td>@claim.Product</td>                                            
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-12">
+                        Input Claims List
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Origin Year</th>
+                                    <th>Development Year</th>
+                                    <th>Incremental Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    @if (Model != null && Model.ProductList.Count > 0)
+                                    {
+                                        foreach (var claim in Model.ProductList)
+                                        {
+                                            <tr>                                                
+                                                <td>@claim.Product</td>
+                                                <td>@claim.OriginYear</td>
+                                                <td>@claim.DevelopmentYear</td>
+                                                <td>@claim.IncrementalValue</td>                                                
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
